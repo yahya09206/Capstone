@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "685190546638",
+    "firebase_url": "https://thehorn-31098.firebaseio.com",
+    "project_id": "thehorn-31098",
+    "storage_bucket": "thehorn-31098.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685190546638:android:e023e57512644357",
+        "android_client_info": {
+          "package_name": "com.yahya.thehorn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685190546638-dmh3vfa79hlnfcq5lio7rqrc0a9hhv7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yahya.thehorn",
+            "certificate_hash": "7cfa5a48d1006a6da2f07b0058ccac6039861dd9"
+          }
+        },
+        {
+          "client_id": "685190546638-vn5mpm38ebbiejohdli0i2cvddgcsemv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaDSOmtkDzsqWThZbdKtFn6-XAjeX35No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685190546638-vn5mpm38ebbiejohdli0i2cvddgcsemv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
