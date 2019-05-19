@@ -2,34 +2,43 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorWhite"
-    android:elevation="4dp">
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/foodImg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_loading" />
 
     <TextView
-        android:id="@+id/original"
+        android:id="@+id/foodName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:textSize="@dimen/textNormal"
-        android:textStyle="italic"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/foodImg"
+        app:layout_constraintTop_toTopOf="@+id/foodImg" />
 
     <TextView
-        android:id="@+id/translated"
+        android:id="@+id/foodTranslation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        android:textSize="@dimen/textNormal"
+        android:textStyle="bold"
         android:textColor="@color/colorBlack"
-        android:textSize="@dimen/textMedium"
-        android:textStyle="italic|bold"
-        app:layout_constraintEnd_toEndOf="@+id/original"
-        app:layout_constraintStart_toStartOf="@+id/original"
-        app:layout_constraintTop_toBottomOf="@+id/original" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/foodName"
+        app:layout_constraintTop_toBottomOf="@+id/foodName" />
 
     <Button
         android:id="@+id/listenBtn"
@@ -37,11 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Listen"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/translated"
-        app:layout_constraintTop_toBottomOf="@+id/translated" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/foodTranslation"
+        app:layout_constraintTop_toBottomOf="@+id/foodTranslation" />
 
     <View
         android:id="@+id/view"
@@ -53,5 +64,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/listenBtn" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

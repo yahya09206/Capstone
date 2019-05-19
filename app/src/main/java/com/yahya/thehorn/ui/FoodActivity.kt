@@ -1,19 +1,22 @@
 package com.yahya.thehorn.ui
 
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yahya.thehorn.R
 import com.yahya.thehorn.models.FoodData
+import kotlinx.android.synthetic.main.activity_numbers.*
+import kotlinx.android.synthetic.main.layout_food_item.view.*
 
 class FoodActivity : AppCompatActivity() {
 
@@ -57,7 +60,7 @@ class FoodActivity : AppCompatActivity() {
         mediaPlayer.setOnErrorListener { mp, _, _ ->
             mp.release()
             Toast.makeText(this, "An error occurred", Toast.LENGTH_SHORT).show()
-            return@setonErrorListener true
+            return@setOnErrorListener true
         }
         mediaPlayer.setOnPreparedListener {it.start()}
         mediaPlayer.setOnCompletionListener{
@@ -93,6 +96,6 @@ class FoodActivity : AppCompatActivity() {
             itemView.foodName.text = foodData.name
             itemView.foodTranslation.text = foodData.translation
         }
-
+    }
 
 }

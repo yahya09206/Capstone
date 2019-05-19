@@ -3,4 +3,5 @@
     <dimen name="textBig">36dp</dimen>
     <dimen name="textMedium">22dp</dimen>
     <dimen name="textNormal">18dp</dimen>
+    <dimen name="textSmall">14dp</dimen>
 </resources>
