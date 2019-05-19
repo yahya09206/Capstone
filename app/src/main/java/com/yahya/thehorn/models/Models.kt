@@ -19,3 +19,10 @@ data class PhraseData(
     val sound: String = "",
     val translation: String = ""
 )
+
+data class FoodData(
+        val image: String = "",
+        val name: String = "",
+        val sound: String = "",
+        val translation: String = ""
+)
