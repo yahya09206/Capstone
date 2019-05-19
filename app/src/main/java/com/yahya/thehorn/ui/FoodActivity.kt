@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.layout_food_item.view.*
 
 class FoodActivity : AppCompatActivity() {
 
-    private val foodsCollectionRef = FirebaseFirestore.getInstance().collection("food")
+    private val foodsCollectionRef = FirebaseFirestore.getInstance().collection("foods")
     private val foods = mutableListOf<FoodData>()
     private lateinit var mediaPlayer: MediaPlayer
 
