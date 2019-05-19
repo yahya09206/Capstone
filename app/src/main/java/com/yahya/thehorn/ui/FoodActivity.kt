@@ -3,10 +3,14 @@ package com.yahya.thehorn.ui
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yahya.thehorn.R
 import com.yahya.thehorn.models.FoodData
@@ -63,4 +67,32 @@ class FoodActivity : AppCompatActivity() {
         }
 
     }
+
+    class FoodsAdapter(private val activity: FoodActivity, private val foods: MutableList<FoodData>) : RecyclerView.Adapter<FoodVH>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FoodVH(LayoutInflater.from(parent.context).inflate(R.layout.layout_food_item, parent, false))
+
+        override fun getItemCount() = foods.size
+
+        override fun onBindViewHolder(holder: FoodVH, position: Int) {
+            holder.bind(foods[position])
+            holder.itemView.listenBtn.setOnClickListener {
+                (it as Button).text = "Playing..."
+                it.isEnabled = false
+                activity.playSound(foods[position].sound, it)
+            }
+        }
+
+    }
+
+    class FoodVH(itemView: View): RecyclerView.ViewHolder(itemView) {
+        fun bind(foodData: FoodData) {
+            Glide.with(itemView.context)
+                    .load(foodData.image)
+                    .placeholder(R.drawable.ic_loading)
+                    .into(itemView.foodImg)
+            itemView.foodName.text = foodData.name
+            itemView.foodTranslation.text = foodData.translation
+        }
+
+
 }
