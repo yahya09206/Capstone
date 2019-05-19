@@ -4,6 +4,8 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yahya.thehorn.R
@@ -44,5 +46,21 @@ class FoodActivity : AppCompatActivity() {
         }
     }
 
+    fun playSound(soundURL: String, btn: View){
+        mediaPlayer = MediaPlayer()
+        mediaPlayer.setDataSource(soundURL)
+        mediaPlayer.prepare()
+        mediaPlayer.setOnErrorListener { mp, _, _ ->
+            mp.release()
+            Toast.makeText(this, "An error occurred", Toast.LENGTH_SHORT).show()
+            return@setonErrorListener true
+        }
+        mediaPlayer.setOnPreparedListener {it.start()}
+        mediaPlayer.setOnCompletionListener{
+            it.release()
+            (btn as Button).text = "Listen"
+            btn.isEnabled = true
+        }
 
+    }
 }
